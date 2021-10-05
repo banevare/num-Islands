@@ -1,7 +1,16 @@
 class Solution {
-    public int numIslands(int[][] grid) {
+    public int numIslands(char [][] gridc) {
+		int [][] grid = new int [gridc.length][gridc[0].length];
+		for(	int i = 0; i < grid.   length; i++) {					//row
+			for(int j = 0; j < grid[i].length; j++){					//column
+				if (gridc[i][j] == '1') {
+					grid[i][j] = 1;
+				}
+				elsegrid[i][j] = 0;
+			}
+		}
 		int island = 0;
-		for(	int i = 0; i < grid.   length; i++) {						//row
+		for(	int i = 0; i < grid.   length; i++) {					//row
 			for(int j = 0; j < grid[i].length; j++){					//column
 				if (grid[i][j] == 1) {
 					adjacent(grid,--island,i,j);
@@ -25,53 +34,54 @@ class Solution {
 			if (grid[i+1][j] == 1) adjacent(grid,island,i+1,j);				//up
 		}
 	}
+	hi
 	public void test0(){
-		int grid [][]= {
-			{0,0,0,0,0},
-			{0,0,0,0,0},
-			{0,0,0,0,0},
-			{0,0,0,0,0}
+		char grid [][]= {
+			{'0','0','0','0','0'},
+			{'0','0','0','0','0'},
+			{'0','0','0','0','0'},
+			{'0','0','0','0','0'}
 		};
 		int a  = numIslands(grid);
 		// print(grid);
 		assert(a == 0);	
 	}
 	public void test1(){
-		int grid [][]= {
-			{1,1,1,1,0},
-			{1,1,0,1,0},
-			{1,1,0,0,0},
-			{0,0,0,0,0}
+		char grid [][]= {
+			{'1','1','1','1','0'},
+			{'1','1','0','1','0'},
+			{'1','1','0','0','0'},
+			{'0','0','0','0','0'}
 		};
 		int a  = numIslands(grid);
-		print(grid);
+		// print(grid);
 		assert(a == 1);	
 	}
 	public void test1Big(){
-		int grid [][]= {
-			{1,1,1,1,1},
-			{1,1,1,1,1},
-			{1,1,1,1,1},
-			{1,1,1,1,1}
+		char grid [][]= {
+			{'1','1','1','1','1'},
+			{'1','1','1','1','1'},
+			{'1','1','1','1','1'},
+			{'1','1','1','1','1'}
 		};
 		int a  = numIslands(grid);
 		// print(grid);
 		assert(a == 1);	
 	}
 	public void test3(){
-		int grid [][]= {
-			{1,1,0,0,0},
-			{1,1,0,0,0},
-			{0,0,1,0,0},
-			{0,0,0,1,1}
+		char grid [][]= {
+			{'1','1','0','0','0'},
+			{'1','1','0','0','0'},
+			{'0','0','1','0','0'},
+			{'0','0','0','1','1'}
 		};
 		int a  = numIslands(grid);
 		// print(grid);
 		assert(a == 3);	
 	}
 	
-	public void print(int[][] grid){	
-		for(	int i = 0; i < grid.   length; i++) {						//row
+	public void print(int[][] grid){
+		for(	int i = 0; i < grid.   length; i++) {					//row
 			System.out.print("{");
 			for(int j = 0; j < grid[i].length; j++){					//column
 				System.out.print(grid[i][j] + " ");
