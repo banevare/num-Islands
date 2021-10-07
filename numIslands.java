@@ -6,7 +6,7 @@ class Solution {
 				if (gridc[i][j] == '1') {
 					grid[i][j] = 1;
 				}
-				elsegrid[i][j] = 0;
+				else grid[i][j] = 0;
 			}
 		}
 		int island = 0;
