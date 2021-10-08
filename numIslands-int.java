@@ -1,7 +1,7 @@
 class Solution {
     public int numIslands(int[][] grid) {
 		int island = 0;
-		for(	int i = 0; i < grid.   length; i++) {					//row
+		for(	int i = 0; i < grid.   length; i++) {						//row
 			for(int j = 0; j < grid[i].length; j++){					//column
 				if (grid[i][j] == 1) {
 					adjacent(grid,--island,i,j);
@@ -71,7 +71,7 @@ class Solution {
 	}
 	
 	public void print(int[][] grid){
-		for(	int i = 0; i < grid.   length; i++) {					//row
+		for(	int i = 0; i < grid.   length; i++) {						//row
 			System.out.print("{");
 			for(int j = 0; j < grid[i].length; j++){					//column
 				System.out.print(grid[i][j] + " ");
